@@ -43,7 +43,7 @@ public class ErrorHandler {
                 .resource(httpServletRequest.getRequestURI())
                 .detail(String.format("%s: %s", ex.getClass().getCanonicalName(), ex.getMessage()))
                 .build();
-        return new ResponseEntity<>(apiErrorResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(apiErrorResponse, httpStatus);
     }
 
 
