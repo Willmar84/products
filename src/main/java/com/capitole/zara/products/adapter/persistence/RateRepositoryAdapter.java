@@ -2,6 +2,7 @@ package com.capitole.zara.products.adapter.persistence;
 
 import com.capitole.zara.products.application.port.out.RateRepositoryPort;
 import com.capitole.zara.products.domain.RateDomain;
+import com.capitole.zara.products.domain.exceptions.RateNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,6 @@ public class RateRepositoryAdapter implements RateRepositoryPort {
                         .price(t.getPrice())
                         .build())
                 .max(Comparator.comparing(RateDomain::getPriceList))
-                .orElseThrow(() -> new RuntimeException("No se encontró tarifa asociada"));
+                .orElseThrow(() -> new RateNotFoundException("No se encontró tarifa asociada"));
     }
 }

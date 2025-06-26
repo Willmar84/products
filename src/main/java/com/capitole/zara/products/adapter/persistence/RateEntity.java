@@ -1,6 +1,7 @@
 package com.capitole.zara.products.adapter.persistence;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Rate")
 @Getter
+@Builder
 public class RateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
